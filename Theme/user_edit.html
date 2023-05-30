@@ -1,0 +1,64 @@
+<div class="post">
+    <div class="postheader"> </div>
+    <div class="postcontent"> 
+        <h2>Список Пользователей</h2> 
+        <p><a name="top"></a></p>
+        <!--Сортирвка-->
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="form">
+                <h3>Форма Редактирования Пользователя</h3>
+                <span>Имя <input type="text" name="edit_text_name" required="" value="<?=$data['user']['first_name']?>"> </span>
+                <span>Фамилия <input type="text" name="edit_text_surname" required="" value="<?=$data['user']['last_name']?>"> </span>
+                <span>город: 
+                    <select size="1" name="edit_selsity">
+                        <option disabled="">Выберите город</option>
+                        <?php foreach($data['cities'] as $key=>$value): ?>
+                            <?php if ($data['user']['city'] == $value['id']): ?>
+                            <option selected value="<?=$value['id']?>"><?=$value['city_name']?></option>
+                            <?php else: ?>
+                                <option value="<?=$value['id']?>"><?=$value['city_name']?></option>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </select>
+                </span>
+                <img width="100" src="/pictures/<?=$data['user']['image']?>" class="image" alt="Фотография">
+                <input type="file" name="uploadfile">
+                <input type="hidden" name="photo" value="/pictures/<?=$data['user']['image']?>">
+                <input type="hidden" name="id_red" value="<?=$data['user']['id']?>">
+                <input type="submit" name="subm_edit_names" value="Подтвердить редактирование"> 
+                <a href="/?page=2">Отмена</a> 
+            </div>
+        </form>
+    </div>
+    <div class="postbottom">
+    </div>
+</div>
+<div class="post">
+    <div class="postheader"> </div>
+    <div class="postcontent"> 
+        <h2>Список Пользователей</h2> 
+        <p><a name="top"></a></p>
+                    <form action="" method="post" enctype="multipart/form-data">
+                                <div class="form">
+                    <h3>Форма Редактирования Пользователя</h3>
+                    
+                    <span>Город 
+                        <select size="1" name="edit_selsity">
+                            <option disabled="">Выберите город</option>
+                                                            <option value="57">London2</option>
+                                                                    <option value="65">Минск</option>
+                                                                    <option value="66">Гродно</option>
+                                                            </select></span>
+                    <img width="100" src="/pictures/4167903-scientist-lab-researcher-chemist-microscope-retro.jpg" class="image" alt="Фотография">
+                    <input type="file" name="uploadfile">
+                    <input type="hidden" name="photo" value="/pictures/4167903-scientist-lab-researcher-chemist-microscope-retro.jpg">
+                    <input type="hidden" name="id_red" value="42">
+                    <input type="submit" name="subm_edit_names" value="Подтвердить редактирование"> 
+                    <a href="/?page=2">Отмена</a>
+                </div>
+            </form>
+                    <!--Сортирвка-->
+                    </div>
+    <div class="postbottom">
+    </div>
+</div>

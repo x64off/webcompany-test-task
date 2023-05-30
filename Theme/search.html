@@ -1,0 +1,18 @@
+<form action="" method="post">
+    <div class="form">
+        <h3>Поиск по имени и/или фамилии пользователя</h3>
+        <span>
+            <input type="search" pattern="[A-Za-zА-Яа-яЁё]{3,16}" name="ins_sh_name" value="" required="" placeholder="Введите запрос">
+        </span>
+        <input type="submit" name="sub_sh_name" value="Поиск">
+    </div>
+</form>
+<?php foreach($data['users'] as $key=>$value): ?>
+<div class="users">
+    <img width="100" src="/pictures/<?=$value['image']?>" class="image" alt="Фотография">
+    <div class="userdan">
+        <h4> <?=$value['last_name']?> <?=$value['first_name']?></h4>
+        <p>Город: <?=$value['city']?></p>
+    </div>
+</div>
+<?php endforeach; ?>

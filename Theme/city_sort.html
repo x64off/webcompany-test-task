@@ -1,0 +1,63 @@
+<div class="post">
+    <div class="postheader"> </div>
+    <div class="postcontent"> 
+        <h2>Список городов</h2>               
+            <form action="" method="post">
+                <div class="sortform">
+                    <div class="pole">
+                        <h3>Поле сортировки</h3>
+                        <span>
+                            <input type="radio" name="sort_sity" value="sort_id" checked="">
+                            <b>id</b>
+                        </span>
+                        <span>
+                            <input type="radio" name="sort_sity" value="sort_sity">
+                            <b>Название Города</b>
+                        </span>
+                        <span>
+                            <input type="radio" name="sort_sity" value="sort_rangir">
+                            <b>Индекс Сортировки</b>
+                        </span>
+                    </div>
+                    <div class="napr">
+                        <h3>Направление сортировки</h3>
+                        <span>
+                            <input type="radio" name="sort_order_by" value="sort_asc" checked="">
+                            <b>Возрастание</b>
+                        </span>
+                        <span>
+                            <input type="radio" name="sort_order_by" value="sort_desc">
+                            <b>Убывание</b>
+                        </span>	
+                    </div>
+                    <input type="submit" name="submit_sort_city" value="Сортировать">
+                    <a href="/?page=1">Отмена</a>
+                </div>
+            </form>
+        <!--вывод таблицы Города-->
+        <form action="" method="post">
+            <div class="form flrig">
+                <input type="submit" name="ins" value="Добавить">   	
+            </div>
+        </form>	
+        <?php foreach($data['cities'] as $key=>$value): ?>
+            <div class='cpsity'>
+                <h3><?=$value['city_name']?></h3>
+                <span>
+                    <form action="" method="post" >
+                        <input type="hidden" name="id" value="<?=$value['id']?>" >
+                        <input type="submit" name="del_fors_city" onclick="return confirm('Вы действительно хотите удалить город?')" value="Удалить" >
+                    </form>	
+                </span>
+                <span>
+                    <form action="" method="post" >
+                        <input type="hidden" name="id" value="<?=$value['id']?>" >
+                        <input type="submit" name="edit_fors_city" value="Редактировать" >
+                    </form>
+                </span>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="postbottom">
+    </div>
+</div>

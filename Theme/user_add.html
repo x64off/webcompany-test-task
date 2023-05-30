@@ -1,0 +1,30 @@
+<div class="post">
+    <div class="postheader"> </div>
+    <div class="postcontent"> 
+        <h2>Список Пользователей</h2> 
+        <p><a name="top"></a></p>
+        <!--Сортирвка-->
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="form">
+                <h3>Форма Добовления Пользователя</h3>
+                <input type="text" name="ins_name" required="" placeholder="Имя">
+                <input type="text" name="ins_surname" required="" placeholder="Фамилия">
+                <span>город: 
+                    <select size="1" name="selsity">
+                        <option disabled="">Выберите город</option>
+                        <?php foreach($data['cities'] as $key=>$value): ?>
+                            <option value="<?=$value['id']?>"><?=$value['city_name']?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </span>
+                <p>Выберите файл изображения</p>
+                <input type="file" name="uploadfile">
+
+                <input type="submit" name="subm_ins_names" value="Добавить">
+                <a href="/?page=2">Отмена</a> 
+            </div>
+        </form>
+    </div>
+    <div class="postbottom">
+    </div>
+</div>

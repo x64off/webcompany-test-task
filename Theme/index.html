@@ -1,0 +1,34 @@
+
+<div class="post">
+    <div class="postheader"> </div>
+    <div class="postcontent"> 
+        <h2>Список городов</h2>               
+        <!--вывод таблицы Города-->
+        <form action="" method="post">
+            <div class="form flrig">
+                <input type="submit" name="ins" value="Добавить" >
+                <input type="submit" name="sort" value="Сортировать" >
+            </div>
+        </form>	
+        <?php foreach($data['cities'] as $key=>$value): ?>
+            <div class='cpsity'>
+                <h3><?=$value['city_name']?></h3>
+                <span>
+                    <form action="" method="post" >
+                        <input type="hidden" name="id" value="<?=$value['id']?>" >
+                        <input type="submit" name="del_fors_city" onclick="return confirm('Вы действительно хотите удалить город?')" value="Удалить" >
+                    </form>	
+                </span>
+                <span>
+                    <form action="" method="post" >
+                        <input type="hidden" name="id" value="<?=$value['id']?>" >
+                        <input type="submit" name="edit_fors_city" value="Редактировать" >
+                    </form>
+                </span>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="postbottom">
+    </div>
+</div>                   
+                   

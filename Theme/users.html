@@ -1,0 +1,51 @@
+<div class="post">
+    <div class="postheader"> </div>
+    <div class="postcontent"> 
+        <h2>Список Пользователей</h2> 
+        <p><a name="top"></a></p>
+        <!--Сортирвка-->
+        <h3><a href="#down">Вниз</a></h3>
+        <div style="display:inline-block">
+            <form action="" method="post">
+                <input type="submit" name="ins2" value="Добавить">
+                <input type="submit" name="sort2" value="Сортировать">
+            </form>	
+        </div>
+        <!--Создадим выпадающий список "Города"-->
+        <div class="filter">
+            <form action="" method="post">
+                <h3>Фильтр по Городам</h3>
+                <select size="1" name="selsity_2">
+                    <option disabled="">Выберите город</option>
+                    <?php foreach($data['cities'] as $key=>$value): ?>
+                    <option value="<?=$value['id']?>"><?=$value['city_name']?></option>
+                    <?php endforeach; ?>
+                </select>
+                    <input type="submit" name="sort_fc" onclick="hhh()" value="Показать">
+            </form>
+        </div>
+        <?php foreach($data['users'] as $key=>$value): ?>
+            <div class="users">
+                <img width="100" src="/pictures/<?=$value['image']?>" class="image" alt="Фотография">
+                <div class="userdan">
+                    <h4> <?=$value['last_name']?> <?=$value['first_name']?></h4>
+                    <p>Город: <?=$value['city']?></p>
+
+                    
+                    <form action="" method="post">
+                        <input type="hidden" name="id" value="<?=$value['id']?>">
+                        <input type="submit" name="del_fors_names" value="Удалить" onclick="return confirm('Вы действительно хотите удалить пользователя?')">
+                    </form>	
+
+                    <form action="" method="post">
+                        <input type="hidden" name="id" value="<?=$value['id']?>">
+                        <input type="submit" name="edit_fors_names" value="Редактировать">
+                    </form>
+                </div>
+            </div>
+        <?php endforeach; ?>
+        <a name="down"></a>
+        <h3><a href="#top">Наверх</a></h3>    </div>
+    <div class="postbottom">
+    </div>
+</div>
