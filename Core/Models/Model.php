@@ -3,7 +3,7 @@ class Model{
     protected $pdo;
     public function __construct()
     {
-        $config     =   include Core_Dir.'config.php';
+        $config     =   include Core_Dir.'Config.php';
         $dsn = "mysql:host=".$config['DB_Host'].";dbname=".$config['DB_Name'];
         $username = $config["DB_User"];
         $password = $config["DB_Password"];
@@ -11,6 +11,7 @@ class Model{
             $this->pdo = new PDO($dsn, $username, $password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+            $this->pdo->exec('set names utf8');
         } catch (PDOException $e) {
             die("Ошибка подключения к базе данных: " . $e->getMessage());
         }
@@ -28,7 +29,6 @@ class Model{
     public function fetchAll($query, $params = []) {
         try {
             $stmt = $this->pdo->prepare($query);
-            var_dump($params);
             $stmt->execute($params);
             return $stmt->fetchAll();
             

@@ -1,7 +1,7 @@
 <?php
-require_once Core_Dir.'controllers/Controller.php';
-require_once Core_Dir.'models/Model.php';
-require_once Core_Dir.'models/View.php';
+require_once Core_Dir.'Controllers/Controller.php';
+require_once Core_Dir.'Models/Model.php';
+require_once Core_Dir.'Models/View.php';
 session_start();
 class System {
     public function  __construct()
@@ -18,7 +18,7 @@ class System {
             };
         else 
             $Contoroller = 'IndexController';
-        $classFile = Core_Dir . 'controllers/' . $Contoroller . '.php';
+        $classFile = Core_Dir . 'Controllers/' . $Contoroller . '.php';
         if (file_exists($classFile)) {
             require $classFile;
         }

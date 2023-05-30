@@ -37,7 +37,7 @@
                     </span>	
                 </div>
                 <input type="submit" name="submit_sort_names" value="Сортировать">
-                <a href="/?page=2">Отмена</a>
+                <a href="?page=2">Отмена</a>
             </div>
         </form>
 
@@ -62,7 +62,7 @@
         </div>
         <?php foreach($data['users'] as $key=>$value): ?>
             <div class="users">
-                <img width="100" src="/pictures/<?=$value['image']?>" class="image" alt="Фотография">
+                <img width="100" src="pictures/<?=$value['image']?>" class="image" alt="Фотография">
                 <div class="userdan">
                     <h4><?=$value['last_name']?> <?=$value['first_name']?></h4>
                     <p>Город: <?=$value['city']?></p>
